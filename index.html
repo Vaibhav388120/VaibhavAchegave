@@ -83,6 +83,79 @@ list.style.color='green';
 for(var i=0;i<odd.length;i++){
     odd[i].style.backgroundColor='green';
 }  
+   //TRAVERSING THE DOM
+  var itemList=document.querySelector('#items');
+  //parentNode
+  console.log(itemList.parentNode);
+  itemList.parentNode.style.backgroundColor='grey';
+  console.log(itemList.parentNode.parentNode);
+
+  //parentElement
+  console.log(itemList.parentElement);
+  itemList.parentNode.style.backgroundColor='grey';
+  console.log(itemList.parentElement.parentElement);
+
+  //childNodes
+  console.log(itemList.childNodes);
+
+  console.log(itemList.children);
+  console.log(itemList.children[1]);
+  itemList.children[1].style.backgroundColor='yellow';
+
+  //FirstChild
+  console.log(itemList.firstChild); //gives text node
+  console.log(itemList.firstElementChild);
+  itemList.firstElementChild.textContent='Hello';
+
+  //lastChild
+  console.log(itemList.lastChild);
+  console.log(itemList.lastElementChild);
+  itemList.lastElementChild.textContent='Hello';
+
+  //nextSibling
+  console.log(itemList.nextSibling);
+  console.log(itemList.nextElementSibling);
+
+  //previousSibling
+  console.log(itemList.previousSibling);
+  //previousElementSibling
+  console.log(itemList.previousElementSibling);
+  itemList.previousElementSibling.style.color='green';
+
+  //createElement
+  var newDiv=document.createElement('div');
+//add class
+  newDiv.className='hello';
+//add id
+newDiv.id='Hello1';
+
+//title
+newDiv.setAttribute('title','Hello Div');
+
+//create text node
+var newDivText=document.createTextNode('Hello World');
+
+//add text to div
+
+newDiv.appendChild(newDivText);
+
+var container=document.querySelector('Header .container');
+var h1=document.querySelector('Header h1');
+container.insertBefore(newDiv,h1);
+
+newDiv.style.fontSize='30px';
+  console.log(newDiv);
+
+  
+  var newDiv1=document.createElement('div');
+newDiv1.appendChild(newDivText);
+var item=document.querySelector('ul list-group');
+var li=document.querySelector('li list-group-item');
+item.insertBefore(newDiv1,li);
+
+  
+  
+  
 </script>
 </body>
 </html>
